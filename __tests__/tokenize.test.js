@@ -1,7 +1,7 @@
-const tokenize = require('./../src/tokenize').tokenize
+const tokenize = require('./../src/tokenizer')
 describe('tokenizer', () => {
     test('var', () => {
-        expect(tokenize(`變量 變量a`)).toEqual([{"key": "變量", "type": "var"}])
+        expect(tokenize(`声明 变量='a'`)).toEqual([{"type": "var"}])
     })
 
     test('var =', () => {
